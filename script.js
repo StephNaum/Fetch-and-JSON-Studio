@@ -25,7 +25,7 @@ window.addEventListener("load", function(){
                             </div>`;
                         document.body.appendChild(newDiv);
                         // Index is necessary to access the 2nd <li>
-                        let newClass = newDiv.getElementsByTagName("li")[1].setAttribute("class", "active");
+                        newDiv.getElementsByTagName("li")[1].setAttribute("class", "active");
                         let active = newDiv.getElementsByClassName("active");
                         // This changes list if Active is true to green
                         if (json[k].active){
