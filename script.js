@@ -2,7 +2,6 @@ window.addEventListener("load", function(){
     let json = [];
     fetch("https://handlers.education.launchcode.org/static/astronauts.json").then(function(response){
         response.json().then(function(json){
-            let astronautCount = 0;
             let spaceTime = [];
             for (let i=0; i<json.length; i++){
                 // Sorting astronauts by most to least time in space
@@ -35,13 +34,11 @@ window.addEventListener("load", function(){
                                 active[j].style.color = "green";
                             } 
                         }; 
-                        // Incrementing astronautCount using loop
-                        astronautCount = k + 1;
                     }
                 }
             }     
             // Adding count of astronauts to page
-            let phrase = `We have ${astronautCount} astronauts.`;
+            let phrase = `We have ${json.length} astronauts.`;
             let h = document.createElement("h2");
             h.innerHTML = phrase;
             document.body.appendChild(h);
